@@ -1,0 +1,22 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "Petra Franklin",
+  "license": "ISC",
+  "dependencies": {
+    "bufferutil": "^4.0.1",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "heroku": "^7.46.2",
+    "nodemon": "^2.0.4",
+    "socket.io": "^2.3.0",
+    "utf-8-validate": "^5.0.2",
+    "ws": "^7.3.1"
+  }
+}
