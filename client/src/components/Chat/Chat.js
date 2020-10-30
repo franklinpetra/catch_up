@@ -9,7 +9,7 @@ import Input from '../Input/Input';
 
 import './Chat.css';
 
-let endpoint ='localhost:5000'||process.env.PORT
+// let endpoint ='localhost:5000'||process.env.PORT
 let socket;
 
 const Chat = ({ location }) => {
@@ -22,8 +22,9 @@ const Chat = ({ location }) => {
   useEffect(() => {
     const { name, room } = queryString.parse(location.search);
 
+    const endpoint = 'localhost:5000'
     socket = io(endpoint);
-
+  
     setRoom(room);
     setName(name)
 
@@ -32,7 +33,7 @@ const Chat = ({ location }) => {
         alert(error);
       }
     });
-  }, [endpoint, location.search]);
+  }, [location.search]);
   
   useEffect(() => {
     socket.on('message', message => {
