@@ -9,8 +9,7 @@ import Input from '../Input/Input';
 
 import './Chat.css';
 
-// const ENDPOINT = 'https://catchup-s.herokuapp.com/';
-const ENDPOINT = 'localhost:5000';
+let endpoint ='localhost:5000'||process.env.PORT
 let socket;
 
 const Chat = ({ location }) => {
@@ -23,7 +22,7 @@ const Chat = ({ location }) => {
   useEffect(() => {
     const { name, room } = queryString.parse(location.search);
 
-    socket = io(ENDPOINT);
+    socket = io(endpoint);
 
     setRoom(room);
     setName(name)
@@ -33,7 +32,7 @@ const Chat = ({ location }) => {
         alert(error);
       }
     });
-  }, [ENDPOINT, location.search]);
+  }, [endpoint, location.search]);
   
   useEffect(() => {
     socket.on('message', message => {
