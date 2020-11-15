@@ -17,11 +17,11 @@ const Chat = ({ location }) => {
   const [users, setUsers] = useState('');
   const [message, setMessage] = useState('');
   const [messages, setMessages] = useState([]);
-
+  const endpoint = 'https://catch-up-server.herokuapp.com/';
   useEffect(() => {
     const { name, room } = queryString.parse(location.search);
 
-    const endpoint = 'https://catch-up-server.herokuapp.com/'
+    const endpoint = 'https://catch-up-server.herokuapp.com/';
     socket = io(endpoint);
   
     setRoom(room);
