@@ -6,10 +6,9 @@ import TextContainer from '../TextContainer/TextContainer';
 import Messages from '../Messages/Messages';
 import InfoBar from '../InfoBar/InfoBar';
 import Input from '../Input/Input';
-
 import './Chat.css';
 
-// let endpoint ='localhost:5000'||process.env.PORT
+// in local environment switch endpoint to ='localhost:5000'||process.env.PORT
 let socket;
 
 const Chat = ({ location }) => {
@@ -22,7 +21,7 @@ const Chat = ({ location }) => {
   useEffect(() => {
     const { name, room } = queryString.parse(location.search);
 
-    const endpoint = 'localhost:5000'
+    const endpoint = 'https://catch-up-server.herokuapp.com/'
     socket = io(endpoint);
   
     setRoom(room);
